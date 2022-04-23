@@ -1,5 +1,5 @@
 {
-  "name": "events-plus",
+  "name": "@unional/events-plus",
   "version": "0.0.0-development",
   "description": "Provides additional features to event emitters",
   "homepage": "https://github.com/unional/events-plus",

@@ -1,4 +1,4 @@
-# events-plus <!-- omit in toc -->
+# @unional/events-plus <!-- omit in toc -->
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
@@ -24,16 +24,16 @@ Supports the following emitters:
 
 ```sh
 # npm
-npm install events-plus
+npm install @unional/events-plus
 
 # yarn
-yarn add events-plus
+yarn add @unional/events-plus
 
 # pnpm
-pnpm install @just-web/app
+pnpm install @unional/events-plus
 
 #rush
-rush add -p @just-web/app
+rush add -p @unional/events-plus
 ```
 
 ## features <!-- omit in toc -->
@@ -70,8 +70,8 @@ emitter.emit('work') // no error is thrown.
 [fbemitter]: https://www.npmjs.com/package/fbemitter
 [github-action-url]: https://github.com/unional/events-plus/actions
 [github-nodejs]: https://github.com/unional/events-plus/workflows/nodejs/badge.svg
-[npm-image]: https://img.shields.io/npm/v/events-plus.svg?style=flat
-[npm-url]: https://npmjs.org/package/events-plus
+[npm-image]: https://img.shields.io/npm/v/@unional/events-plus.svg?style=flat
+[npm-url]: https://npmjs.org/package/@unional/events-plus
 [semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
 [TypeScript]: https://www.typescriptlang.org
