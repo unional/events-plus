@@ -12,7 +12,8 @@
 
 Provides additional features to event emitters.
 
-Supports the following emitters:
+Should support any event emitters,
+especially the following:
 
 - [events]
 - [eventemitter2]
