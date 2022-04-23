@@ -1,0 +1,26 @@
+{
+  "env": {
+    "es2020": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": "plugin:harmony/latest",
+  "overrides": [
+    {
+      "extends": "plugin:harmony/ts-recommended",
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "parserOptions": {
+        "project": "tsconfig.json"
+      },
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "no-console": "off",
+        "no-use-before-define": "off"
+      }
+    }
+  ],
+  "root": true
+}
