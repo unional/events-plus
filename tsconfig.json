@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "ts",
+    "typings"
+  ],
+  "typedocOptions": {
+    "customTitle": "Provides additional features to event emitters",
+    "customTitleLink": "https://github.com/unional/events-plus",
+    "entryPoints": [
+      "ts/index.ts"
+    ],
+    "out": "docs"
+  }
+}

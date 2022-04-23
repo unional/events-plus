@@ -1,0 +1,78 @@
+{
+  "name": "events-plus",
+  "version": "0.0.0-development",
+  "description": "Provides additional features to event emitters",
+  "homepage": "https://github.com/unional/events-plus",
+  "bugs": {
+    "url": "https://github.com/unional/events-plus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unional/events-plus.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Homa Wong (unional)",
+    "email": "homawong@gmail.com"
+  },
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "ts"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "build:doc": "typedoc",
+    "clean": "rimraf lib coverage",
+    "coverage": "jest --coverage",
+    "depcheck": "depcheck",
+    "lint": "eslint --ext=ts,js .",
+    "nuke": "yarn clean && rimraf node_modules",
+    "prepare": "husky install",
+    "release": "npx semantic-release",
+    "size-limit": "size-limit",
+    "test": "jest",
+    "test:types": "tsc",
+    "verify": "run-p verify:build lint test:types coverage",
+    "verify:build": "npm-run-all clean build -p depcheck size-limit",
+    "watch": "jest --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.7",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/jest": "^27.4.1",
+    "depcheck": "^1.4.3",
+    "eslint": "^8.14.0",
+    "eslint-plugin-harmony": "^6.0.2",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "jest-progress-tracker": "^3.0.4",
+    "jest-validate": "^27.5.1",
+    "jest-watch-repeat": "^2.0.0",
+    "jest-watch-suspend": "^1.1.2",
+    "jest-watch-toggle-config": "^2.0.1",
+    "jest-watch-typeahead": "^1.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "satisfier": "^5.1.2",
+    "size-limit": "^7.0.8",
+    "typedoc": "^0.22.15",
+    "typedoc-plugin-extras": "^2.2.3",
+    "typescript": "^4.6.3"
+  },
+  "size-limit": [
+    {
+      "limit": "10 kb"
+    }
+  ]
+}
