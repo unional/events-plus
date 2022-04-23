@@ -1,0 +1,46 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@unional/events-plus</title><meta name="description" content="Documentation for @unional/events-plus"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="https://github.com/unional/events-plus" class="title">Provides additional features to event emitters</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@unional/events-plus </h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#unionalevents-plus-" id="unionalevents-plus-" style="color: inherit; text-decoration: none;">
+  <h1>@unional/events-plus <!-- omit in toc --></h1>
+</a>
+<p><a href="https://npmjs.org/package/@unional/events-plus"><img src="https://img.shields.io/npm/v/@unional/events-plus.svg?style=flat" alt="NPM version"></a>
+<a href="https://npmjs.org/package/events-plus"><img src="https://img.shields.io/npm/dm/events-plus.svg?style=flat" alt="NPM downloads"></a></p>
+<p><a href="https://github.com/unional/events-plus/actions"><img src="https://github.com/unional/events-plus/workflows/nodejs/badge.svg" alt="GitHub NodeJS"></a>
+<a href="https://codecov.io/gh/unional/events-plus"><img src="https://codecov.io/gh/unional/events-plus/branch/master/graph/badge.svg" alt="Codecov"></a></p>
+<p><a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Semantic Release"></a></p>
+<p><a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/vscode-ready-green.svg" alt="Visual Studio Code"></a></p>
+<p>Provides additional features to event emitters.</p>
+<p>Supports the following emitters:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/events">events</a></li>
+<li><a href="https://www.npmjs.com/package/eventemitter2">eventemitter2</a></li>
+<li><a href="https://www.npmjs.com/package/eventemitter3">eventemitter3</a></li>
+<li><a href="https://www.npmjs.com/package/fbemitter">fbemitter</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">EventTarget</a></li>
+</ul>
+
+<a href="#installation-" id="installation-" style="color: inherit; text-decoration: none;">
+  <h2>Installation <!-- omit in toc --></h2>
+</a>
+<pre><code class="language-sh"><span class="hl-0"># npm</span><br/><span class="hl-1">npm install @unional/events-plus</span><br/><br/><span class="hl-0"># yarn</span><br/><span class="hl-1">yarn add @unional/events-plus</span><br/><br/><span class="hl-0"># pnpm</span><br/><span class="hl-1">pnpm install @unional/events-plus</span><br/><br/><span class="hl-0">#rush</span><br/><span class="hl-1">rush add -p @unional/events-plus</span>
+</code></pre>
+
+<a href="#features-" id="features-" style="color: inherit; text-decoration: none;">
+  <h2>features <!-- omit in toc --></h2>
+</a>
+<ul>
+<li><a href="#traperror">trapError</a></li>
+</ul>
+
+<a href="#traperror" id="traperror" style="color: inherit; text-decoration: none;">
+  <h3>trapError</h3>
+</a>
+<p><a href="https://github.com/unional/events-plus/blob/main/ts/trapError.ts"><code>trapError()</code></a> will trap any error thrown in the listener and emit it to the <code>trap</code>.
+This allows the emitter workflow to be not interrupted by rouge listeners.</p>
+<p>The <code>trap</code> is defaulted to <code>console.error()</code>,
+but you can override that to anything else.</p>
+<p><code>errorTrapper()</code> is a partial application form of <code>trapError()</code>,
+allow you to create your own <code>trapError()</code> function with your choice of trap,
+and use it for multiple emitters.</p>
+<pre><code class="language-ts"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">emitter</span><span class="hl-1"> = </span><span class="hl-4">trapError</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">EventEmitter</span><span class="hl-1">())</span><br/><span class="hl-5">emitter</span><span class="hl-1">.</span><span class="hl-4">on</span><span class="hl-1">(</span><span class="hl-6">&#39;work&#39;</span><span class="hl-1">, () </span><span class="hl-2">=&gt;</span><span class="hl-1"> { </span><span class="hl-7">throw</span><span class="hl-1"> </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-8">Error</span><span class="hl-1">(</span><span class="hl-6">&#39;missed deadline&#39;</span><span class="hl-1">) })</span><br/><span class="hl-5">emitter</span><span class="hl-1">.</span><span class="hl-4">emit</span><span class="hl-1">(</span><span class="hl-6">&#39;work&#39;</span><span class="hl-1">) </span><span class="hl-0">// no error is thrown.</span>
+</code></pre>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-interface"><a href="interfaces/ErrorTrap.html" class="tsd-kind-icon">Error<wbr/>Trap</a></li><li class="tsd-kind-interface"><a href="interfaces/EventEmitterLike.html" class="tsd-kind-icon">Event<wbr/>Emitter<wbr/>Like</a></li><li class="tsd-kind-interface"><a href="interfaces/EventTargetLike.html" class="tsd-kind-icon">Event<wbr/>Target<wbr/>Like</a></li><li class="tsd-kind-function"><a href="modules.html#errorTraper" class="tsd-kind-icon">error<wbr/>Traper</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#trapError" class="tsd-kind-icon">trap<wbr/>Error</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
