@@ -10,7 +10,7 @@ module.exports = {
     '<rootDir>/ts',
   ],
   'testEnvironment': 'jsdom',
-  'testMatch': ['**/?(*.)+(spec|test|integrate|accept|system|unit).jsdom.[jt]s?(x)'],
+  'testMatch': ['**/?(*.)+(spec|test|integrate|accept|system|unit).[jt]s?(x)'],
   'watchPlugins': [
     'jest-watch-suspend',
     'jest-watch-repeat',

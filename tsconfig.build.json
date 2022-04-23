@@ -13,6 +13,7 @@
     "newLine": "LF",
     "noUnusedLocals": true,
     "noUnusedParameters": false,
+    "outDir": "lib",
     "sourceMap": true,
     "inlineSources": true,
     "strict": true,

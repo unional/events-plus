@@ -2,3 +2,4 @@ Codecov
 fbemitter
 fbemitter
 EventTarget
+trapError
