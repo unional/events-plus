@@ -1,4 +1,4 @@
-# events-plus
+# events-plus <!-- omit in toc -->
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
@@ -20,7 +20,7 @@ Supports the following emitters:
 - [fbemitter]
 - [EventTarget]
 
-## Installation
+## Installation <!-- omit in toc -->
 
 ```sh
 # npm
@@ -36,10 +36,38 @@ pnpm install @just-web/app
 rush add -p @just-web/app
 ```
 
+## features <!-- omit in toc -->
+
+- [trapError](#traperror)
+
+### trapError
+
+[`trapError()`] will trap any error thrown in the listener and emit it to the `trap`.
+This allows the emitter workflow to be not interrupted by rouge listeners.
+
+The `trap` is defaulted to `console.error()`,
+but you can override that to anything else.
+
+`errorTrapper()` is a partial application form of `trapError()`,
+allow you to create your own `trapError()` function with your choice of trap,
+and use it for multiple emitters.
+
+```ts
+const emitter = trapError(new EventEmitter())
+emitter.on('work', () => { throw new Error('missed deadline') })
+emitter.emit('work') // no error is thrown.
+```
+
+[`trapError()`]: https://github.com/unional/events-plus/blob/main/ts/trapError.ts
 [codecov-image]: https://codecov.io/gh/unional/events-plus/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/unional/events-plus
 [downloads-image]: https://img.shields.io/npm/dm/events-plus.svg?style=flat
 [downloads-url]: https://npmjs.org/package/events-plus
+[eventemitter2]: https://www.npmjs.com/package/eventemitter2
+[eventemitter3]: https://www.npmjs.com/package/eventemitter3
+[events]: https://www.npmjs.com/package/events
+[EventTarget]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget
+[fbemitter]: https://www.npmjs.com/package/fbemitter
 [github-action-url]: https://github.com/unional/events-plus/actions
 [github-nodejs]: https://github.com/unional/events-plus/workflows/nodejs/badge.svg
 [npm-image]: https://img.shields.io/npm/v/events-plus.svg?style=flat

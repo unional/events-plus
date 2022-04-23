@@ -1,9 +1,9 @@
-import { EventEmitterBase } from './types'
+import { EventTargetLike } from './types'
 
 describe('EventEmitter type', () => {
   test('accept EventTarget', () => {
     const e = new EventTarget()
-    const a: EventEmitterBase = e
+    const a: EventTargetLike = e
     expect(a).toBeDefined()
   })
 })
