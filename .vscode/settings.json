@@ -1,0 +1,11 @@
+{
+  "cSpell.ignorePaths": [
+    ".git/objects",
+    ".vscode-insiders",
+    ".vscode",
+    "node_modules",
+    "package-lock.json",
+    "vscode-extension",
+    "yarn.lock",
+  ]
+}
