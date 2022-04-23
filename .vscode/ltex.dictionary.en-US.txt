@@ -3,3 +3,8 @@ fbemitter
 fbemitter
 EventTarget
 trapError
+
+@unional
+Homa
+unional
+NONINFRINGEMENT
