@@ -1,51 +1,38 @@
 import { EventEmitterLike, EventTargetLike } from './types'
 
-export interface ErrorTrap {
+export interface ErrorLogger {
   error(...args: any[]): void
 }
 
-function overrideFn(target: any, trap: ErrorTrap, fn: (...args: any[]) => void) {
-  return function (
+function overrideListener(target: any, logger: ErrorLogger, methodName: string) {
+  const fn = target[methodName]
+  target[methodName] = function (
     eventName: string | symbol,
     listener: (...args: any[]) => void
   ) {
-    const wrappedListener = function (...args: any[]) {
-      try {
-        listener(...args)
-      }
-      catch (e) {
-        trap.error(e)
-      }
-    }
-    fn.call(target, eventName, wrappedListener)
+    fn.call(target, eventName, function wrappedListener(...args: any[]) {
+      try { listener(...args) }
+      catch (e) { logger.error(e) }
+    })
+  }
+}
+
+function overrideEmit(target: any, logger: ErrorLogger, methodName: string) {
+  const fn = target[methodName]
+  target[methodName] = function (eventName: string | symbol, ...args: any[]) {
+    try { fn.call(target, eventName, ...args) }
+    catch (e) { logger.error(e) }
   }
 }
 
 /**
  * creates a curried `trapError()` function with predefined trap.
  */
-export function errorTraper(trap: ErrorTrap = console) {
+export function errorTraper(logger: ErrorLogger = console) {
   return function trapEmitterError<E extends EventEmitterLike | EventTargetLike>(emitter: E): E {
     const target: any = emitter
-    if (target.addListener) {
-      target.addListener = overrideFn(target, trap, target.addListener)
-    }
-    if (target.on) {
-      target.on = overrideFn(target, trap, target.on)
-    }
-    if (target.once) {
-      target.once = overrideFn(target, trap, target.once)
-    }
-    if (target.prependListener) {
-      target.prependListener = overrideFn(target, trap, target.prependListener)
-    }
-    if (target.prependOnceListener) {
-      target.prependOnceListener = overrideFn(target, trap, target.prependOnceListener)
-    }
-    if (target.addEventListener) {
-      target.addEventListener = overrideFn(target, trap, target.addEventListener)
-    }
-
+    if (target.emit) overrideEmit(target, logger, 'emit')
+    if (target.addEventListener) overrideListener(target, logger, 'addEventListener')
     return emitter
   }
 }
@@ -53,6 +40,6 @@ export function errorTraper(trap: ErrorTrap = console) {
 /**
  * trap errors in emitter listeners
  */
-export function trapError<E extends EventEmitterLike | EventTargetLike>(emitter: E, trap: ErrorTrap = console): E {
-  return errorTraper(trap)(emitter)
+export function trapError<E extends EventEmitterLike | EventTargetLike>(emitter: E, logger: ErrorLogger = console): E {
+  return errorTraper(logger)(emitter)
 }

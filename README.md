@@ -42,20 +42,32 @@ rush add -p @unional/events-plus
 
 ### trapError
 
-[`trapError()`] will trap any error thrown in the listener and emit it to the `trap`.
-This allows the emitter workflow to be not interrupted by rouge listeners.
+[`trapError()`] will trap any error thrown in the listener and emit it to the `logger`.
+This prevents the emitter workflow interrupted by rouge listeners.
 
-The `trap` is defaulted to `console.error()`,
+The `logger` is defaulted to `console.error()`,
 but you can override that to anything else.
 
-`errorTrapper()` is a partial application form of `trapError()`,
-allow you to create your own `trapError()` function with your choice of trap,
-and use it for multiple emitters.
-
 ```ts
+import { EventEmitter } from 'events'
+import { trapError } from 'events-plus'
+
 const emitter = trapError(new EventEmitter())
 emitter.on('work', () => { throw new Error('missed deadline') })
 emitter.emit('work') // no error is thrown.
+```
+
+`errorTrapper()` creates your own `trapError()` with specific `logger`
+You can then use it on multiple emitters.
+
+```ts
+import { EventEmitter } from 'eventemitter3'
+import { errorTrapper } from 'events-plus'
+import { getLogger } from 'standard-log'
+
+const yourTrapError = errorTrapper(getLogger('emitter'))
+const emitter = yourTrapError(new EventEmitter())
+...
 ```
 
 [`trapError()`]: https://github.com/unional/events-plus/blob/main/ts/trapError.ts
