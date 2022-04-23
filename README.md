@@ -73,8 +73,8 @@ const emitter = yourTrapError(new EventEmitter())
 [`trapError()`]: https://github.com/unional/events-plus/blob/main/ts/trapError.ts
 [codecov-image]: https://codecov.io/gh/unional/events-plus/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/unional/events-plus
-[downloads-image]: https://img.shields.io/npm/dm/events-plus.svg?style=flat
-[downloads-url]: https://npmjs.org/package/events-plus
+[downloads-image]: https://img.shields.io/npm/dm/@unional/events-plus.svg?style=flat
+[downloads-url]: https://npmjs.org/package/@unional/events-plus
 [eventemitter2]: https://www.npmjs.com/package/eventemitter2
 [eventemitter3]: https://www.npmjs.com/package/eventemitter3
 [events]: https://www.npmjs.com/package/events
