@@ -43,8 +43,8 @@ node_modules
 
 # project folders
 cjs
-dist*
+dist
 docs
 esm
-lib*
-out*
+lib
+out

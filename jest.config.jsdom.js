@@ -1,5 +1,7 @@
+const base = require('./config/jest.config.base')
+
 module.exports = {
-  roots: ['<rootDir>/ts'],
+  ...base,
+  displayName: 'jsdom',
   testEnvironment: 'jsdom',
-  displayName: 'jsdom'
 }
