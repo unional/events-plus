@@ -2462,10 +2462,10 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-plugin-harmony@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-harmony/-/eslint-plugin-harmony-6.0.2.tgz#12954112ab9bad7e195cb414ce8ce255b1b2a044"
-  integrity sha512-KFfVZiszw5lFdtfWQr45j/w6KeimFyRbvzLulz2pghHvhFIva/aHn6Zy0Vpwva/AF7xaL8z2HIux/NPYZpdw2g==
+eslint-plugin-harmony@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-harmony/-/eslint-plugin-harmony-6.0.4.tgz#93051eb383ef0d614d3634b53c16a12b314c2a16"
+  integrity sha512-Yi80UJ5Ib9PD6WEYpbjvgPSgbOVDdnu2XxnodQP0fPVlHXxL9vjT+xHHLpKlxMSxTU+g/76lMZ+LNgsf4e8JSw==
   dependencies:
     "@typescript-eslint/experimental-utils" "^5.17.0"
     "@typescript-eslint/parser" "^5.17.0"
