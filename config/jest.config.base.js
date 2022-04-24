@@ -2,29 +2,15 @@ const nodeMajorVersion = parseInt(process.version.slice(1, process.version.index
 const testMatch = [''].concat([14, 16].filter(v => v <= nodeMajorVersion))
   .map(v => `**/?(*.)+(spec|test|integrate|accept|system|unit)${v}.[jt]s?(x)`)
 
-
-  module.exports = {
-  'collectCoverageFrom': [
-    '<rootDir>/ts/**/*.[jt]s'
-  ],
-  'reporters': [
-    'default',
-    'jest-progress-tracker'
-  ],
-  'roots': [
-    '<rootDir>/ts',
-  ],
+module.exports = {
+  collectCoverageFrom: ['<rootDir>/ts/**/*.[jt]s'],
+  roots: ['<rootDir>/ts'],
   testMatch,
-  'watchPlugins': [
+  watchPlugins: [
     'jest-watch-suspend',
-    'jest-watch-repeat',
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',
-    [
-      'jest-watch-toggle-config', { 'setting': 'verbose' },
-    ],
-    [
-      'jest-watch-toggle-config', { 'setting': 'collectCoverage' },
-    ],
-  ],
+    ['jest-watch-toggle-config', { 'setting': 'verbose' }],
+    ['jest-watch-toggle-config', { 'setting': 'collectCoverage' }]
+  ]
 }
