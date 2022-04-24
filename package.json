@@ -31,7 +31,12 @@
     "verify:build": "npm-run-all clean build -p depcheck",
     "watch": "jest --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@unional/events-plus": "^1.0.1",
+    "eventemitter2": "^6.4.5",
+    "eventemitter3": "^4.0.7",
+    "fbemitter": "^3.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",

@@ -2,10 +2,10 @@ module.exports = {
   'collectCoverageFrom': [
     '<rootDir>/ts/**/*.[jt]s'
   ],
-  'roots': [
-    '<rootDir>/ts',
+  projects: [
+    './jest.config.node.js',
+    './jest.config.jsdom.js'
   ],
-  'testEnvironment': 'node',
   'testMatch': ['**/?(*.)+(spec|test|integrate|accept|system|unit).[jt]s?(x)'],
   'watchPlugins': [
     'jest-watch-suspend',
