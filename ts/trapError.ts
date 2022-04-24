@@ -5,7 +5,7 @@ export interface ErrorLogger {
 }
 
 function overrideListener(target: any, logger: ErrorLogger, methodName: string) {
-  const fn = target[methodName]
+  const fn = target[methodName] as EventEmitterLike['addListener']
   target[methodName] = function (
     eventName: string | symbol,
     listener: (...args: any[]) => void
@@ -18,7 +18,7 @@ function overrideListener(target: any, logger: ErrorLogger, methodName: string) 
 }
 
 function overrideEmit(target: any, logger: ErrorLogger, methodName: string) {
-  const fn = target[methodName]
+  const fn = target[methodName] as (EventEmitterLike['emit'])
   target[methodName] = function (eventName: string | symbol, ...args: any[]) {
     try { fn.call(target, eventName, ...args) }
     catch (e) { logger.error(e) }
