@@ -55,7 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "depcheck": "^1.4.3",
     "eslint": "^8.14.0",
-    "eslint-plugin-harmony": "^6.1.0",
+    "eslint-plugin-harmony": "^6.0.4",
     "eventemitter2": "^6.4.5",
     "eventemitter3": "^4.0.7",
     "fbemitter": "^3.0.0",

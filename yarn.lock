@@ -2628,7 +2628,7 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-plugin-harmony@^6.1.0:
+eslint-plugin-harmony@^6.0.4:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-harmony/-/eslint-plugin-harmony-6.1.0.tgz#f7213aa70b6f8f29ce5910036ca03ced80111c82"
   integrity sha512-eh/xOsBit03D5zehWHtcB5y5+1LD6jzUDrXRr3BgSC8HI1OVdv/S7wItfLdJDjfTLCmNAMmyvRkwn0L/ZMCPqQ==
