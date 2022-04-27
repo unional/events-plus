@@ -40,6 +40,7 @@ rush add -p @unional/events-plus
 ## features <!-- omit in toc -->
 
 - [trapError](#traperror)
+- [supportFSA](#supportfsa)
 
 ### trapError
 
@@ -70,6 +71,16 @@ const yourTrapError = errorTrapper(getLogger('emitter'))
 const emitter = yourTrapError(new EventEmitter())
 ...
 ```
+
+### supportFSA
+
+[`supportFSA()`] adds [flux-standard-action] support to the emitter.
+
+It provides 3 key benefits:
+
+- typed event
+- standardized values
+- middleware metadata support
 
 [`trapError()`]: https://github.com/unional/events-plus/blob/main/ts/trapError.ts
 [codecov-image]: https://codecov.io/gh/unional/events-plus/branch/master/graph/badge.svg

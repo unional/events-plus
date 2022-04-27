@@ -4,3 +4,5 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[Visual Studio Code]vscode-url [Wallaby.js]wallaby-url\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qevents-plus\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[Visual Studio Code]vscode-url\\E$"}
+
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QsupportFSA\\E$"}

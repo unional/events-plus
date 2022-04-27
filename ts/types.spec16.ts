@@ -1,9 +1,9 @@
+import { canAssign } from 'type-plus'
 import { EventTargetLike } from './types'
 
-describe('EventEmitter type', () => {
+describe('EventTargetLike', () => {
   test('accept EventTarget', () => {
     const e = new EventTarget()
-    const a: EventTargetLike = e
-    expect(a).toBeDefined()
+    canAssign<EventTargetLike>()(e)
   })
 })
