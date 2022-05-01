@@ -1,90 +1,69 @@
 
 
-export interface FSABare<Type extends string> {
+export interface FSAType<Type extends string> {
   type: Type
 }
 
-export interface FSAWithPayload<
-  Type extends string,
-  Payload> extends FSABare<Type> {
+export interface FSAPayload<Payload> {
   payload: Payload
 }
 
-export interface FSAWithMeta<
-  Type extends string,
-  Meta> extends FSABare<Type> {
+export interface FSAMeta<Meta> {
   meta: Meta
 }
 
-export interface FSAWithPayloadAndMeta<
-  Type extends string,
-  Payload,
-  Meta> extends FSABare<Type> {
-  payload: Payload,
-  meta: Meta
-}
-
-export interface ErrorFSABare<
-  Type extends string = string> {
-  type: Type,
+export interface FSAError {
   error: true
 }
 
-export interface ErrorFSAWithMeta<
-  Type extends string = string,
-  Meta = undefined>
-  extends ErrorFSABare<Type> {
-  meta: Meta
+export interface FSAErrorPayload<ErrorPayload extends Error> {
+  payload: ErrorPayload
 }
 
-export interface ErrorFSAWithError<
-  Type extends string = string,
-  CustomError extends Error = Error>
-  extends ErrorFSABare<Type> {
-  payload: CustomError
-}
+export interface FSAWithPayload<Type extends string, Payload>
+  extends FSAType<Type>, FSAPayload<Payload> { }
 
+export interface FSAWithMeta<Type extends string, Meta>
+  extends FSAType<Type>, FSAMeta<Meta> { }
 
-export interface ErrorFSAWithMetaAndError<
-  Type extends string = string,
-  Meta = undefined,
-  CustomError extends Error = Error>
-  extends ErrorFSABare<Type> {
-  payload: CustomError,
-  meta: Meta
-}
+export interface FSAWithPayloadAndMeta<Type extends string, Payload, Meta>
+  extends FSAType<Type>, FSAPayload<Payload>, FSAMeta<Meta> { }
+
+export interface ErrorFSABare<Type extends string = string>
+  extends FSAType<Type>, FSAError { }
+
+export interface ErrorFSAWithMeta<Type extends string = string, Meta = undefined>
+  extends ErrorFSABare<Type>, FSAMeta<Meta> { }
+
+export interface ErrorFSAWithError<Type extends string = string, CustomError extends Error = Error>
+  extends ErrorFSABare<Type>, FSAErrorPayload<CustomError> { }
+
+export interface ErrorFSAWithMetaAndError<Type extends string = string, Meta = undefined, CustomError extends Error = Error>
+  extends ErrorFSABare<Type>, FSAErrorPayload<CustomError>, FSAMeta<Meta> { }
 
 export type ErrorFSA<
   Type extends string = string,
   Meta = undefined,
-  CustomError extends Error | undefined = Error | undefined> =
-  (undefined extends Meta
-    ? (undefined extends CustomError
+  ErrorPayload extends Error | undefined = Error | undefined> =
+  (Meta extends undefined
+    ? (ErrorPayload extends undefined
       ? ErrorFSABare<Type>
-      : (CustomError extends Error ? ErrorFSAWithError<Type, CustomError> : never))
-    : (undefined extends CustomError
+      : (ErrorPayload extends Error ? ErrorFSAWithError<Type, ErrorPayload> : never))
+    : (ErrorPayload extends undefined
       ? ErrorFSAWithMeta<Type, Meta>
-      : (CustomError extends Error ? ErrorFSAWithMetaAndError<Type, Meta, CustomError> : never)))
-
-// (undefined extends CustomError
-//   ? (undefined extends Meta
-//     ? ErrorFSABare<Type, CustomError>
-//     : ErrorFSAWithMeta<Type, Meta, CustomError>)
-//   : (CustomError extends Error ? (undefined extends Meta
-//     ? ErrorFSAWithPayload<Type, CustomError>
-//     : ErrorFSAWithPayloadAndMeta<Type, Meta, CustomError>) : never))
+      : (ErrorPayload extends Error ? ErrorFSAWithMetaAndError<Type, Meta, ErrorPayload> : never)))
 
 export type FSA<
   Type extends string = string,
   Payload = undefined,
   Meta = undefined,
-  CustomError extends Error | undefined = undefined> = (undefined extends Payload
+  ErrorPayload extends Error | undefined = undefined> = (undefined extends Payload
     ? (undefined extends Meta
-      ? FSABare<Type>
+      ? FSAType<Type>
       : FSAWithMeta<Type, Meta>)
     : (undefined extends Meta
       ? FSAWithPayload<Type, Payload>
       : FSAWithPayloadAndMeta<Type, Payload, Meta>))
-  | ErrorFSA<Type, Meta, CustomError>
+  | ErrorFSA<Type, Meta, ErrorPayload>
 
 export { isError, isFSA } from 'flux-standard-action'
