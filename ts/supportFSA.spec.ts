@@ -38,17 +38,17 @@ describe('createFSAEvent()', () => {
         fail('should not reach')
       }
     })
-    // test('match error event with no payload', () => {
-    //   const event = createFSAEvent('event')
-    //   const e = event({ error: true })
-    //   if (event.match(e)) {
-    //     type E = typeof e
-    //     isType.equal<true, ErrorFSABare<string>, E>()
-    //   }
-    //   else {
-    //     fail('should not reach')
-    //   }
-    // })
+    test('match error event with no payload', () => {
+      const event = createFSAEvent('event')
+      const e = event({ error: true })
+      if (event.match(e)) {
+        type E = typeof e
+        isType.equal<true, ErrorFSABare<string>, E>()
+      }
+      else {
+        fail('should not reach')
+      }
+    })
     // test('match error event with payload', () => {
     //   const event = createFSAEvent('event')
     //   const e = event({ error: true, payload: new CustomError() })
