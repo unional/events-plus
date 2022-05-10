@@ -42,7 +42,9 @@
     "verify:build": "npm-run-all clean build -p depcheck size-limit",
     "watch": "jest --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@just-func/types": "^0.1.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
@@ -71,7 +73,7 @@
     "standard-log": "^7.1.0",
     "typedoc": "^0.22.15",
     "typedoc-plugin-extras": "^2.2.3",
-    "typescript": "^4.6.3"
+    "typescript": "^4.7.0-beta"
   },
   "size-limit": [
     {
