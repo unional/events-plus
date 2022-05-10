@@ -61,7 +61,7 @@
     "eventemitter2": "^6.4.5",
     "eventemitter3": "^4.0.7",
     "fbemitter": "^3.0.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "jest": "^27.5.1",
     "jest-validate": "^27.5.1",
     "jest-watch-suspend": "^1.1.2",
