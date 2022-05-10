@@ -39,7 +39,26 @@ rush add -p @unional/events-plus
 
 ## features <!-- omit in toc -->
 
+- [JustEvent](#justevent)
 - [trapError](#traperror)
+
+### JustEvent
+
+[`justEvent()`] creates typed event with [just-func] semantics.
+It makes consuming and emitting events with parameters much easier.
+
+```ts
+import { EventEmitter } from 'EventEmitter3'
+import { justEvent } from 'events-plus'
+
+const emitter = new EventEmitter()
+
+const count = justEvent<number>('count')
+
+emitter.addListener(count.type, count.handle(value => expect(value).toBe(1)))
+
+emitter.emit(count.type, ...count(1))
+```
 
 ### trapError
 
@@ -71,6 +90,7 @@ const emitter = yourTrapError(new EventEmitter())
 ...
 ```
 
+[`justEvent()`]: https://github.com/unional/events-plus/blob/main/ts/justEvent.ts
 [`trapError()`]: https://github.com/unional/events-plus/blob/main/ts/trapError.ts
 [codecov-image]: https://codecov.io/gh/unional/events-plus/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/unional/events-plus
@@ -83,6 +103,7 @@ const emitter = yourTrapError(new EventEmitter())
 [fbemitter]: https://www.npmjs.com/package/fbemitter
 [github-action-url]: https://github.com/unional/events-plus/actions
 [github-nodejs]: https://github.com/unional/events-plus/workflows/nodejs/badge.svg
+[just-func]: https://github.com/justland/just-func-typescript
 [npm-image]: https://img.shields.io/npm/v/@unional/events-plus.svg?style=flat
 [npm-url]: https://npmjs.org/package/@unional/events-plus
 [semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
