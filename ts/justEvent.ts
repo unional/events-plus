@@ -1,11 +1,14 @@
 import { JustDuo, JustEmpty, JustMeta, JustUno } from '@just-func/types'
+import { EventEmitterLike, EventTargetLike, isEventEmitterLike, isEventTargetLike } from './types'
 
 export interface JustEventDuo<
   Type extends string,
   Value, Meta extends JustMeta> {
   type: Type,
   (value: Value, meta: Meta): JustDuo<Value, Meta>,
-  handle(handler: (value: Value, meta: Meta) => unknown): (...args: any[]) => any
+  listener(callback: (value: Value, meta: Meta) => unknown): (...args: any[]) => any,
+  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: (value: Value, meta: Meta) => unknown): void
+  emitBy(emitter: EventEmitterLike | EventTargetLike, value: Value, meta: Meta): void
 }
 
 export interface JustEventUno<
@@ -13,14 +16,18 @@ export interface JustEventUno<
   Value> {
   type: Type,
   (value: Value): JustUno<Value>,
-  handle(handler: (value: Value) => unknown): (...args: any[]) => any
+  listener(callback: (value: Value) => unknown): (...args: any[]) => any,
+  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: (value: Value) => unknown): void
+  emitBy(emitter: EventEmitterLike | EventTargetLike, value: Value): void
 }
 
 export interface JustEventEmpty<
   Type extends string> {
   type: Type,
   (): JustEmpty,
-  handle(handler: () => unknown): (...args: any[]) => any
+  listener(callback: () => unknown): (...args: any[]) => any
+  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: () => unknown): void
+  emitBy(emitter: EventEmitterLike | EventTargetLike): void
 }
 
 export function justEvent(type: string): JustEventEmpty<typeof type>
@@ -31,6 +38,14 @@ export function justEvent<Value, Meta extends JustMeta>(type: string): any {
     return [value, meta]
   }, {
     type,
-    handle(handler: (...args: any[]) => any) { return handler }
+    listener(callback: (...args: any[]) => any) { return callback },
+    listenTo(emitter: EventEmitterLike | EventTargetLike, callback: (...args: any[]) => any) {
+      if (isEventEmitterLike(emitter)) emitter.addListener(this.type, callback)
+      if (isEventTargetLike(emitter)) emitter.addEventListener(this.type, callback)
+    },
+    emitBy(emitter: EventEmitterLike | EventTargetLike, value: Value, meta: Meta): void {
+      if (isEventEmitterLike(emitter)) emitter.emit(this.type, value, meta)
+      if (isEventTargetLike(emitter)) emitter.dispatchEvent(new Event(this.type))
+    }
   })
 }
