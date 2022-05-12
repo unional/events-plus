@@ -7,7 +7,7 @@ export interface JustEventDuo<
   type: Type,
   (value: Value, meta: Meta): JustDuo<Value, Meta>,
   listener(callback: (value: Value, meta: Meta) => unknown): (...args: any[]) => any,
-  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: (value: Value, meta: Meta) => unknown): void
+  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: (value: Value, meta: Meta) => unknown): void,
   emitBy(emitter: EventEmitterLike | EventTargetLike, value: Value, meta: Meta): void
 }
 
@@ -17,7 +17,7 @@ export interface JustEventUno<
   type: Type,
   (value: Value): JustUno<Value>,
   listener(callback: (value: Value) => unknown): (...args: any[]) => any,
-  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: (value: Value) => unknown): void
+  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: (value: Value) => unknown): void,
   emitBy(emitter: EventEmitterLike | EventTargetLike, value: Value): void
 }
 
@@ -25,8 +25,8 @@ export interface JustEventEmpty<
   Type extends string> {
   type: Type,
   (): JustEmpty,
-  listener(callback: () => unknown): (...args: any[]) => any
-  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: () => unknown): void
+  listener(callback: () => unknown): (...args: any[]) => any,
+  listenTo(emitter: EventEmitterLike | EventTargetLike, callback: () => unknown): void,
   emitBy(emitter: EventEmitterLike | EventTargetLike): void
 }
 
