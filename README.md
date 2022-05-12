@@ -48,8 +48,8 @@ rush add -p @unional/events-plus
 It makes consuming and emitting events with parameters much easier.
 
 ```ts
+import { justEvent } from '@unional/events-plus'
 import { EventEmitter } from 'EventEmitter3'
-import { justEvent } from 'events-plus'
 
 const emitter = new EventEmitter()
 
@@ -58,6 +58,10 @@ const count = justEvent<number>('count')
 emitter.addListener(count.type, count.handle(value => expect(value).toBe(1)))
 
 emitter.emit(count.type, ...count(1))
+
+// or
+count.listenTo(emitter, value => expect(value).toBe(1))
+count.emitBy(emitter, 1)
 ```
 
 ### trapError
@@ -69,10 +73,10 @@ The `logger` is defaulted to `console.error()`,
 but you can override that to anything else.
 
 ```ts
+import { trapError } from '@unional/events-plus'
 import { EventEmitter } from 'events'
-import { trapError } from 'events-plus'
 
-const emitter = trapError(new EventEmitter())
+const emitter = trapError(new EventEmitter()) // or `trapError(emitter, { logger })`
 emitter.on('work', () => { throw new Error('missed deadline') })
 emitter.emit('work') // no error is thrown.
 ```
@@ -81,8 +85,8 @@ emitter.emit('work') // no error is thrown.
 You can then use it on multiple emitters.
 
 ```ts
+import { errorTrapper } from '@unional/events-plus'
 import { EventEmitter } from 'eventemitter3'
-import { errorTrapper } from 'events-plus'
 import { getLogger } from 'standard-log'
 
 const yourTrapError = errorTrapper(getLogger('emitter'))
