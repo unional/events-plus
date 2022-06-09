@@ -43,7 +43,7 @@
     "watch": "jest --watch"
   },
   "dependencies": {
-    "@just-func/types": "^0.1.0"
+    "@just-func/types": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
