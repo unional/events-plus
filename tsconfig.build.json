@@ -5,8 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": [
-      "DOM",
-      "ES2020"
+      "DOM"
     ],
     "module": "CommonJS",
     "moduleResolution": "node",
