@@ -1,4 +1,4 @@
-import { EventEmitterLike, EventTargetLike } from './types'
+import { EventEmitterLike, EventTargetLike } from './types.js'
 
 export interface ErrorLogger {
   error(...args: any[]): void

@@ -1,8 +1,6 @@
 import a from 'assert'
-import { createStandardLogForTest } from 'standard-log'
-import { StandardLogForTest } from 'standard-log/cjs/standardLog'
-import { EventEmitterLike, trapError } from '.'
-import { EventTargetLike } from './types'
+import { createStandardLogForTest, StandardLogForTest } from 'standard-log'
+import { EventEmitterLike, EventTargetLike, trapError } from './index.js'
 
 export function thrower() { throw new Error('something went wrong') }
 

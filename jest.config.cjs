@@ -1,7 +1,7 @@
 module.exports = {
   projects: [
-    './jest.config.node.js',
-    './jest.config.jsdom.js'
+    './jest.config.node.cjs',
+    './jest.config.jsdom.cjs'
   ],
   watchPlugins: [
     'jest-watch-suspend',

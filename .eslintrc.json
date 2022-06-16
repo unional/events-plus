@@ -5,7 +5,9 @@
     "node": true
   },
   "extends": "plugin:harmony/latest",
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "overrides": [
     {
       "extends": "plugin:harmony/ts-recommended-type-check",
@@ -23,5 +25,8 @@
       }
     }
   ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "root": true
 }

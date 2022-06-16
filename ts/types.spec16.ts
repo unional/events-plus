@@ -1,4 +1,4 @@
-import { EventTargetLike } from './types'
+import { EventTargetLike } from './types.js'
 
 describe('EventEmitter type', () => {
   test('accept EventTarget', () => {

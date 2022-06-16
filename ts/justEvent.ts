@@ -1,5 +1,5 @@
 import { JustDuo, JustEmpty, JustMeta, JustUno } from '@just-func/types'
-import { EventEmitterLike, EventTargetLike, isEventEmitterLike, isEventTargetLike } from './types'
+import { EventEmitterLike, EventTargetLike, isEventEmitterLike, isEventTargetLike } from './types.js'
 
 export interface JustEventDuo<
   Type extends string,

@@ -1,0 +1,18 @@
+name: release
+on:
+  push:
+    branches: [main]
+
+jobs:
+  code:
+    uses: unional/.github/.github/workflows/yarn-verify-linux.yml@main
+
+  release:
+    uses: unional/.github/.github/workflows/yarn-release-semantic.yml@main
+    needs: code
+    secrets: inherit
+
+  docgen:
+    if: github.ref == 'refs/heads/main'
+    uses: unional/.github/.github/workflows/yarn-docs.yml@main
+    needs: release
