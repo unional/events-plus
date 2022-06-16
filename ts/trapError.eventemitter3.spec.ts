@@ -1,7 +1,5 @@
 import { EventEmitter } from 'eventemitter3'
-import { beforeEachTrapErrorTest, testTrapError, thrower } from './trapErrorTest'
-
-beforeEachTrapErrorTest()
+import { testTrapError, thrower } from './trapErrorTest'
 
 describe('trapError', () => {
   test('trap error from `addListener()`', () => {
