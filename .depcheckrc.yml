@@ -3,4 +3,10 @@ ignores:
   - "@size-limit/*"
   - "@types/jest"
   - jest-environment-jsdom
+  - jest-validate
+  - jest-watch-suspend
+  - jest-watch-toggle-config
+  - jest-watch-typeahead
+  - ts-jest
+  - tslib
   - typedoc*

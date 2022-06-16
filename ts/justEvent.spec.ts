@@ -1,4 +1,4 @@
-import { justEvent } from '.'
+import { justEvent } from './index.js'
 
 it('defaults to no value, no meta', () => {
   const empty = justEvent('empty')

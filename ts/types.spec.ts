@@ -2,7 +2,7 @@ import { EventEmitter2 } from 'eventemitter2'
 import { EventEmitter as EE3 } from 'eventemitter3'
 import { EventEmitter as NodeEE } from 'events'
 import { EventEmitter as FBEE } from 'fbemitter'
-import { EventEmitterLike } from './types'
+import { EventEmitterLike } from './types.js'
 
 describe('EventEmitter type', () => {
   test('accept nodejs', () => {

@@ -1,5 +1,5 @@
 import { EventEmitter2 } from 'eventemitter2'
-import { testTrapError, thrower } from './trapErrorTest'
+import { testTrapError, thrower } from './trapErrorTest.js'
 
 describe('trapError', () => {
   test('trap error from `addListener()`', () => {

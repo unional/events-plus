@@ -1,3 +1,3 @@
-export * from './justEvent'
-export * from './trapError'
-export * from './types'
+export * from './justEvent.js'
+export * from './trapError.js'
+export * from './types.js'

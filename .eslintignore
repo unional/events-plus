@@ -1,7 +1,8 @@
-cjs
-dist*
-docs
-esm
-lib*
-node_modules
-out*
+/cjs
+/dist*
+/docs
+/esm
+/lib*
+/node_modules
+/out*
+/tslib

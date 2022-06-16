@@ -1,5 +1,5 @@
 import { EventEmitter } from 'fbemitter'
-import { justEvent } from './justEvent'
+import { justEvent } from './index.js'
 
 test('usage', () => {
   const emitter = new EventEmitter()
