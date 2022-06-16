@@ -33,52 +33,52 @@
     "nuke": "yarn clean && rimraf node_modules",
     "prepare": "husky install",
     "release": "npx semantic-release",
-    "size-limit": "size-limit",
+    "size": "size-limit",
     "test": "jest",
     "test:node": "jest -c ./jest.config.node.js",
     "test:jsdom": "jest -c ./jest.config.jsdom.js",
     "test:types": "tsc",
-    "verify": "run-p verify:build lint test:types coverage",
-    "verify:build": "npm-run-all clean build -p depcheck size-limit",
+    "verify": "npm-run-all clean -p build lint depcheck coverage -p size",
     "watch": "jest --watch"
   },
   "dependencies": {
-    "@just-func/types": "^0.2.0"
+    "@just-func/types": "^0.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@types/fbemitter": "^2.0.32",
-    "@types/jest": "^27.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.23.0",
+    "@types/jest": "^28.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
     "depcheck": "^1.4.3",
-    "eslint": "^8.14.0",
-    "eslint-plugin-harmony": "^7.0.0",
+    "eslint": "^8.17.0",
+    "eslint-plugin-harmony": "^7.1.0",
     "eventemitter2": "^6.4.5",
     "eventemitter3": "^4.0.7",
     "fbemitter": "^3.0.0",
-    "husky": "^8.0.0",
-    "jest": "^27.5.1",
-    "jest-validate": "^27.5.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "jest-validate": "^28.1.1",
     "jest-watch-suspend": "^1.1.2",
     "jest-watch-toggle-config": "^2.0.1",
-    "jest-watch-typeahead": "^1.0.0",
+    "jest-watch-typeahead": "^1.1.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "size-limit": "^7.0.8",
-    "standard-log": "^7.1.0",
-    "typedoc": "^0.22.15",
+    "standard-log": "^9.1.5",
+    "typedoc": "^0.22.17",
     "typedoc-plugin-extras": "^2.2.3",
-    "typescript": "^4.7.1-rc"
+    "typescript": "^4.7.3"
   },
   "size-limit": [
     {
       "limit": "10 kb"
     }
-  ]
+  ],
+  "packageManager": "yarn@3.2.1"
 }
