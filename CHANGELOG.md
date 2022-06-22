@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/unional/events-plus/compare/v2.1.0...v2.2.0) (2022-06-22)
+
+
+### Features
+
+* add default event listener ([4bd5631](https://github.com/unional/events-plus/commit/4bd563123f0cdc93a89160ebc446e08406bf5447))
+
 # [2.1.0](https://github.com/unional/events-plus/compare/v2.0.1...v2.1.0) (2022-06-16)
 
 
