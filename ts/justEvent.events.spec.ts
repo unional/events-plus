@@ -6,7 +6,7 @@ test('usage', () => {
 
   const count = justEvent<number>('count')
 
-  emitter.addListener(count.type, count.listener(value => expect(value).toBe(1)))
+  emitter.addListener(count.type, count.handle(value => expect(value).toBe(1)))
 
   emitter.emit(count.type, ...count(1))
 })

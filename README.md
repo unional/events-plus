@@ -51,9 +51,8 @@ It makes consuming and emitting events with parameters much easier.
 import { justEvent } from '@unional/events-plus'
 import { EventEmitter } from 'EventEmitter3'
 
-const emitter = new EventEmitter()
-
 const count = justEvent<number>('count')
+const emitter = new EventEmitter()
 
 emitter.addListener(count.type, count.handle(value => expect(value).toBe(1)))
 
@@ -62,6 +61,17 @@ emitter.emit(count.type, ...count(1))
 // or
 count.listenTo(emitter, value => expect(value).toBe(1))
 count.emitBy(emitter, 1)
+```
+
+You can also create the event with a default handler:
+
+```ts
+
+let sum = 0
+const sum = justEvent('sum', (value: number) => sum +=value)
+
+const emitter = new EventEmitter()
+emitter.addListener(sum.type, sum.handler)
 ```
 
 ### trapError
