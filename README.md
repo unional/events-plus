@@ -66,9 +66,11 @@ count.emitBy(emitter, 1)
 You can also create the event with a default listener:
 
 ```ts
+import { justEvent } from '@unional/events-plus'
+import { EventEmitter } from 'EventEmitter3'
 
-let sum = 0
-const sum = justEvent('sum', (value: number) => sum +=value)
+let total = 0
+const sum = justEvent('sum', (value: number) => total +=value)
 
 const emitter = new EventEmitter()
 emitter.addListener(sum.type, sum.defaultListener)
