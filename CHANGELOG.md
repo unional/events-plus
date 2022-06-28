@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/unional/events-plus/compare/v2.2.0...v2.2.1) (2022-06-28)
+
+
+### Bug Fixes
+
+* support default listener with optional param ([fe30090](https://github.com/unional/events-plus/commit/fe30090564a0019b3484750838e42f60eadbaa49))
+
 # [2.2.0](https://github.com/unional/events-plus/compare/v2.1.0...v2.2.0) (2022-06-22)
 
 
