@@ -92,7 +92,7 @@ export function justEvent(type: string): JustEventEmpty<typeof type>
 /**
  * Creates just an event that is typed and easy to use.
  */
-export function justEvent(type: string, defaultListener: () => unknown): JustEventEmpty<typeof type> & {
+export function justEvent(type: string, defaultListener: (value: void) => unknown): JustEventEmpty<typeof type> & {
   /**
    * The default event listener
    */

@@ -35,6 +35,14 @@ it('can define default listener with value', () => {
   expect(actual!).toBe('hello')
 })
 
+it('can define default listener with optional value', () => {
+  let actual: string | undefined
+  const echo = justEvent('echo', (value?: string) => actual = value)
+
+  echo.defaultListener('hello')
+  expect(actual!).toBe('hello')
+})
+
 it('can define default listener with value and meta', () => {
   let actual: any
   const add = justEvent('add', ([a, b]: [number, number], meta: { logs: string[] }) => {
