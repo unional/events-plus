@@ -4,6 +4,7 @@
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "yzhang.markdown-all-in-one",
-    "DavidAnson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "GitHub.vscode-pull-request-github"
   ]
 }
