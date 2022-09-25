@@ -2198,7 +2198,7 @@ __metadata:
     rimraf: ^3.0.2
     semantic-release: ^19.0.3
     size-limit: ^8.0.0
-    standard-log: ^9.1.6
+    standard-log: ^10.0.0
     ts-jest: ^28.0.5
     tslib: ^2.4.0
     typedoc: ^0.23.0
@@ -8687,16 +8687,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"standard-log@npm:^9.1.6":
-  version: 9.1.6
-  resolution: "standard-log@npm:9.1.6"
+"standard-log@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "standard-log@npm:10.0.0"
   dependencies:
     "@just-func/types": ^0.2.0
     iso-error: ^4.3.5
     ms: ^2.1.3
-    type-plus: ^4.10.2
+    type-plus: ^4.11.2
     upper-case: ^2.0.2
-  checksum: 6e5fea3b8bb30ea21914017395f95b65883b1e4f628978cb6e4f396fecb6af1978e8fa32e4efe84c7575fb0a6aeb3b95ced082d4b122f92f7cb1aef33941fe11
+  checksum: 66f414549fc23ea4a578a1fed70ff100a4174ae7b55d623576b3b690fa4511d8e79995aa19db5ab397ce3a007e893a97a5bae097bb28056b1b7b09416f04b41d
   languageName: node
   linkType: hard
 
@@ -9265,13 +9265,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-plus@npm:^4.10.2":
-  version: 4.10.2
-  resolution: "type-plus@npm:4.10.2"
+"type-plus@npm:^4.11.2":
+  version: 4.13.1
+  resolution: "type-plus@npm:4.13.1"
   dependencies:
     tersify: ^3.10.2
-    unpartial: ^0.7.5
-  checksum: e3638e0add2fb6faaf87070fc853a6a71136a93eb3066070064518276ad1182dc03ccaba1d8f4735024b4070835391b2a4b751077e7b3d9c06635fa2e55574d7
+    unpartial: ^1.0.3
+  checksum: 0d304fe079c0f4f643f0134f8e8edfb66e70a3c41a466119eb40ca69c28ff2e2226c29286bbd0d0d979dab65bda8fa1b5878ca8470cf0c898b412180bfe7628c
   languageName: node
   linkType: hard
 
@@ -9433,10 +9433,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unpartial@npm:^0.7.4, unpartial@npm:^0.7.5":
+"unpartial@npm:^0.7.4":
   version: 0.7.5
   resolution: "unpartial@npm:0.7.5"
   checksum: d38b2ba134ad94c7cd2148001865948541da93b51560aa63056940924c3f4cc9eb52da196e7f45df369aa414e5202ddc9483352e663245b4c3b28503573e0ec9
+  languageName: node
+  linkType: hard
+
+"unpartial@npm:^1.0.3":
+  version: 1.0.4
+  resolution: "unpartial@npm:1.0.4"
+  checksum: 38fc678290a68f216e1b95207ab62e60b2616d9c3107ad3188df47b19ad5231fda0cd6474de23403e70567eb68b2ed01b7577f27a557092e9046725edc8aac41
   languageName: node
   linkType: hard
 
