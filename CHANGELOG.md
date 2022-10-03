@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/unional/events-plus/compare/v2.2.1...v2.2.2) (2022-10-03)
+
+
+### Bug Fixes
+
+* commonjs package.json ([a014c6b](https://github.com/unional/events-plus/commit/a014c6b0b9b00ca01953841208dd52f8af2311f1))
+
 ## [2.2.1](https://github.com/unional/events-plus/compare/v2.2.0...v2.2.1) (2022-06-28)
 
 
