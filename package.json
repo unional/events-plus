@@ -56,7 +56,7 @@
     "watch": "jest --watch"
   },
   "dependencies": {
-    "@just-func/types": "^0.3.0"
+    "@just-func/types": "^0.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
