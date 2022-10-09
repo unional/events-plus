@@ -1,3 +1,10 @@
+## [2.2.4](https://github.com/unional/events-plus/compare/v2.2.3...v2.2.4) (2022-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @just-func/types to ^0.4.0 ([#31](https://github.com/unional/events-plus/issues/31)) ([8c9cf92](https://github.com/unional/events-plus/commit/8c9cf9294a65898417a246df15f24bbc0389ceb0))
+
 ## [2.2.3](https://github.com/unional/events-plus/compare/v2.2.2...v2.2.3) (2022-10-09)
 
 
