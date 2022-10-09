@@ -1166,7 +1166,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@just-func/types@npm:^0.2.0":
+"@just-func/types@npm:^0.2.1":
   version: 0.2.1
   resolution: "@just-func/types@npm:0.2.1"
   dependencies:
@@ -2208,7 +2208,7 @@ __metadata:
     rimraf: ^3.0.2
     semantic-release: ^19.0.3
     size-limit: ^8.0.0
-    standard-log: ^10.0.0
+    standard-log: ^11.0.0
     ts-jest: ^28.0.5
     tslib: ^2.4.0
     typedoc: ^0.23.0
@@ -5330,10 +5330,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iso-error@npm:^4.3.5":
-  version: 4.3.5
-  resolution: "iso-error@npm:4.3.5"
-  checksum: 5079bac3c5a0897ab7d095a58c4c17606e03b5f35265b6bc77317ea1c82466959edca716ea3faffbe330803eba5e2a30e47489da27b2cf299aed671d0d5598b1
+"iso-error@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "iso-error@npm:4.4.0"
+  checksum: 83ff73fb9ee84d8a5c44b401abe18dcf8686be3af9a20e292baf59014ff3e2ed0482a0e3147d7df14b6b36c54e156b799659dbcaeb3eab7d1b32dc6520386722
   languageName: node
   linkType: hard
 
@@ -8706,16 +8706,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"standard-log@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "standard-log@npm:10.0.0"
+"standard-log@npm:^11.0.0":
+  version: 11.1.0
+  resolution: "standard-log@npm:11.1.0"
   dependencies:
-    "@just-func/types": ^0.2.0
-    iso-error: ^4.3.5
+    "@just-func/types": ^0.2.1
+    iso-error: ^4.4.0
     ms: ^2.1.3
-    type-plus: ^4.11.2
+    type-plus: ^4.13.1
     upper-case: ^2.0.2
-  checksum: 66f414549fc23ea4a578a1fed70ff100a4174ae7b55d623576b3b690fa4511d8e79995aa19db5ab397ce3a007e893a97a5bae097bb28056b1b7b09416f04b41d
+  checksum: 2cd8cfde880b88977649c5dbf24451eb70bead4f2dbb8302329797bcaadb152000867ee6b0677ad456ca6b9b61738e0fb6e0fbbc34fcf7d541186998ded58e98
   languageName: node
   linkType: hard
 
@@ -9284,13 +9284,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-plus@npm:^4.11.2":
-  version: 4.13.1
-  resolution: "type-plus@npm:4.13.1"
+"type-plus@npm:^4.13.1":
+  version: 4.13.2
+  resolution: "type-plus@npm:4.13.2"
   dependencies:
     tersify: ^3.10.2
     unpartial: ^1.0.3
-  checksum: 0d304fe079c0f4f643f0134f8e8edfb66e70a3c41a466119eb40ca69c28ff2e2226c29286bbd0d0d979dab65bda8fa1b5878ca8470cf0c898b412180bfe7628c
+  checksum: cfce3200aac6a3a97342fca32102fda5bad4d4d7b9eaabc668781e50bcac95daff3da5653bdec12c623f447ade75744b7d93c2f743369a1111e455ddb020560d
   languageName: node
   linkType: hard
 
