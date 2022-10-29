@@ -12,8 +12,8 @@
 
 Provides additional features to event emitters.
 
-Should support any event emitters,
-especially the following:
+Should support any event emitters.
+Tested with the following:
 
 - [events]
 - [eventemitter2]
@@ -124,6 +124,5 @@ const emitter = yourTrapError(new EventEmitter())
 [npm-url]: https://npmjs.org/package/@unional/events-plus
 [semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
-[TypeScript]: https://www.typescriptlang.org
 [vscode-image]: https://img.shields.io/badge/vscode-ready-green.svg
 [vscode-url]: https://code.visualstudio.com/
