@@ -1175,12 +1175,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@just-func/types@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@just-func/types@npm:0.4.0"
+"@just-func/types@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@just-func/types@npm:0.5.0"
   dependencies:
-    type-plus: ^4.9.0
-  checksum: 1f9cab3dc7bcc9b99b2bd606b1d4fd553be6afa03ce8efd4046515955cf097a56ac70ad49804a25931fe503a8a2da376a29db763e4295b2819843a2f6faf1c3b
+    type-plus: ^4.18.0
+  checksum: 323704807846fbf29e62a386e66efe95719d703425d97a30584647f7e4d79e93b1627a57575a525e252c335d81db19159a1fcfcd833d956a5785e45db0c89c3e
   languageName: node
   linkType: hard
 
@@ -2180,7 +2180,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^17.0.2
     "@commitlint/config-conventional": ^17.0.2
-    "@just-func/types": ^0.4.0
+    "@just-func/types": ^0.5.0
     "@semantic-release/changelog": ^6.0.1
     "@semantic-release/git": ^10.0.1
     "@semantic-release/github": ^8.0.4
@@ -9291,6 +9291,16 @@ __metadata:
     tersify: ^3.10.2
     unpartial: ^1.0.3
   checksum: cfce3200aac6a3a97342fca32102fda5bad4d4d7b9eaabc668781e50bcac95daff3da5653bdec12c623f447ade75744b7d93c2f743369a1111e455ddb020560d
+  languageName: node
+  linkType: hard
+
+"type-plus@npm:^4.18.0":
+  version: 4.18.0
+  resolution: "type-plus@npm:4.18.0"
+  dependencies:
+    tersify: ^3.10.2
+    unpartial: ^1.0.3
+  checksum: 45cbc3117793147271ca4f41b19245c3682d8ebc589a0fc8e989ca64652d4fc26e2ea826439677dd4f8867a101c649d1515e4bebdc5af78dc8a32c0117330bf3
   languageName: node
   linkType: hard
 
