@@ -73,7 +73,7 @@
     "eslint": "^8.17.0",
     "eslint-plugin-harmony": "^7.1.0",
     "eventemitter2": "^6.4.5",
-    "eventemitter3": "^4.0.7",
+    "eventemitter3": "^5.0.0",
     "fbemitter": "^3.0.0",
     "husky": "^8.0.1",
     "jest": "^29.0.0",
