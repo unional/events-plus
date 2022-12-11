@@ -1,13 +1,10 @@
 ignores:
   - "@commitlint/*"
+  - "@repobuddy/jest"
   - "@semantic-release/*"
   - "@size-limit/*"
   - "@types/jest"
-  - jest-environment-jsdom
-  - jest-validate
-  - jest-watch-suspend
-  - jest-watch-toggle-config
-  - jest-watch-typeahead
+  - jest-*
   - semantic-release
   - ts-jest
   - tslib
