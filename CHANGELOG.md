@@ -1,3 +1,17 @@
+# [3.0.0](https://github.com/unional/events-plus/compare/v2.2.5...v3.0.0) (2022-12-11)
+
+
+### Bug Fixes
+
+* update deps ([b4f5821](https://github.com/unional/events-plus/commit/b4f5821841bcd59b4a0bce7d9f57b6afd868e690))
+
+
+### BREAKING CHANGES
+
+* CJS transpile to ES2015 instead of ES5
+
+use @repobuddy/jest
+
 ## [2.2.5](https://github.com/unional/events-plus/compare/v2.2.4...v2.2.5) (2022-11-20)
 
 
