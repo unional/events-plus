@@ -4,6 +4,6 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "outDir": "cjs",
-    "target": "ES5"
+    "target": "ES2015"
   }
 }

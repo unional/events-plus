@@ -1,7 +1,4 @@
-const base = require('./config/jest.config.base.cjs')
-
 module.exports = {
-  ...base,
+  preset: '@repobuddy/jest/presets/ts-esm',
   displayName: 'node',
-  testEnvironment: 'node',
 }
