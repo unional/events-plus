@@ -4,8 +4,8 @@
     "noEmit": true
   },
   "typedocOptions": {
-    "customTitle": "Provides additional features to event emitters",
-    "customTitleLink": "https://github.com/unional/events-plus",
+    "name": "Provides additional features to event emitters",
+    "titleLink": "https://github.com/cyberuni/events-plus",
     "entryPoints": [
       "ts/index.ts"
     ],
