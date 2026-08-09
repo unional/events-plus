@@ -1,3 +1,5 @@
+# @unional/events-plus
+
 # [3.0.0](https://github.com/unional/events-plus/compare/v2.2.5...v3.0.0) (2022-12-11)
 
 

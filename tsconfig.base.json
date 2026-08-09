@@ -4,15 +4,17 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "inlineSources": true,
     "lib": [
-      "DOM"
+      "DOM",
+      "ES2015"
     ],
     "newLine": "LF",
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "outDir": "lib",
+    "skipLibCheck": true,
     "sourceMap": true,
-    "inlineSources": true,
     "strict": true,
     "stripInternal": true,
     "useDefineForClassFields": true

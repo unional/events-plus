@@ -1,11 +1,10 @@
 ignores:
   - "@commitlint/*"
   - "@repobuddy/jest"
-  - "@semantic-release/*"
+  - "@changesets/cli"
   - "@size-limit/*"
   - "@types/jest"
   - jest-*
-  - semantic-release
   - ts-jest
   - tslib
   - typedoc*

@@ -1,14 +1,14 @@
 {
   "name": "@unional/events-plus",
-  "version": "0.0.0-development",
+  "version": "3.0.0",
   "description": "Provides additional features to event emitters",
-  "homepage": "https://github.com/unional/events-plus",
+  "homepage": "https://github.com/cyberuni/events-plus",
   "bugs": {
-    "url": "https://github.com/unional/events-plus/issues"
+    "url": "https://github.com/cyberuni/events-plus/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/unional/events-plus.git"
+    "url": "https://github.com/cyberuni/events-plus.git"
   },
   "license": "MIT",
   "author": {
@@ -34,42 +34,43 @@
   "scripts": {
     "build": "run-s build:cjs build:esm build:tslib",
     "build:cjs": "tsc -p tsconfig.cjs.json && ncp package.cjs.json cjs/package.json",
+    "build:doc": "typedoc",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:tslib": "tsc -p tsconfig.tslib.json && ncp package.cjs.json tslib/package.json",
-    "build:doc": "typedoc",
     "clean": "rimraf cjs coverage esm lib tslib",
     "coverage": "jest --coverage",
-    "coverage:node": "yarn test:node --coverage",
-    "coverage:jsdom": "yarn test:jsdom --coverage",
+    "coverage:jsdom": "pnpm test:jsdom --coverage",
+    "coverage:node": "pnpm test:node --coverage",
+    "cs": "changeset",
     "depcheck": "depcheck",
     "lint": "eslint --ext=ts,js .",
-    "nuke": "yarn clean && rimraf node_modules",
-    "prepare": "husky install",
-    "prepack": "pinst --disable",
+    "nuke": "pnpm clean && rimraf node_modules",
     "postpack": "pinst --enable",
+    "prepack": "pinst --disable",
+    "prepare": "husky install",
+    "release": "changeset publish",
     "size": "size-limit",
     "test": "jest",
-    "test:node": "jest -c ./jest.config.node.cjs",
     "test:jsdom": "jest -c ./jest.config.jsdom.cjs",
+    "test:node": "jest -c ./jest.config.node.cjs",
     "test:types": "tsc",
     "test:watch": "jest --watch",
     "verify": "npm-run-all build lint depcheck coverage -p size",
+    "version": "changeset version",
     "watch": "jest --watch"
   },
   "dependencies": {
     "@just-func/types": "^0.5.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.31.1",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@repobuddy/jest": "^2.2.1",
-    "@semantic-release/changelog": "^7.0.0",
-    "@semantic-release/git": "^11.0.0",
-    "@semantic-release/github": "^12.0.0",
-    "@semantic-release/npm": "^13.0.0",
     "@size-limit/preset-small-lib": "^8.1.0",
     "@types/fbemitter": "^2.0.32",
     "@types/jest": "^28.1.8",
+    "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "depcheck": "^1.4.3",
     "eslint": "^8.29.0",
@@ -87,7 +88,6 @@
     "npm-run-all2": "^5.0.0",
     "pinst": "^3.0.0",
     "rimraf": "^3.0.2",
-    "semantic-release": "^25.0.0",
     "size-limit": "^8.1.0",
     "standard-log": "^11.5.0",
     "ts-jest": "^28.0.8",
@@ -96,7 +96,7 @@
     "typedoc-plugin-extras": "^2.3.1",
     "typescript": "^4.9.4"
   },
-  "packageManager": "yarn@3.8.7",
+  "packageManager": "pnpm@11.20.0",
   "size-limit": [
     {
       "path": "./cjs/index.js",
