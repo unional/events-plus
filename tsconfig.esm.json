@@ -4,6 +4,10 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "outDir": "esm",
-    "target": "ES2019"
+    "target": "ES2019",
+    "lib": [
+      "DOM",
+      "ES2019"
+    ]
   }
 }

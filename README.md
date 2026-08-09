@@ -6,7 +6,6 @@
 [![GitHub NodeJS][github-nodejs]][github-action-url]
 [![Codecov][codecov-image]][codecov-url]
 
-[![Semantic Release][semantic-release-image]][semantic-release-url]
 
 [![Visual Studio Code][vscode-image]][vscode-url]
 
@@ -106,10 +105,10 @@ const emitter = yourTrapError(new EventEmitter())
 ...
 ```
 
-[`justEvent()`]: https://github.com/unional/events-plus/blob/main/ts/justEvent.ts
-[`trapError()`]: https://github.com/unional/events-plus/blob/main/ts/trapError.ts
-[codecov-image]: https://codecov.io/gh/unional/events-plus/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/unional/events-plus
+[`justEvent()`]: https://github.com/cyberuni/events-plus/blob/main/ts/justEvent.ts
+[`trapError()`]: https://github.com/cyberuni/events-plus/blob/main/ts/trapError.ts
+[codecov-image]: https://codecov.io/gh/cyberuni/events-plus/branch/main/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/cyberuni/events-plus
 [downloads-image]: https://img.shields.io/npm/dm/@unional/events-plus.svg?style=flat
 [downloads-url]: https://npmjs.org/package/@unional/events-plus
 [eventemitter2]: https://www.npmjs.com/package/eventemitter2
@@ -117,12 +116,10 @@ const emitter = yourTrapError(new EventEmitter())
 [events]: https://www.npmjs.com/package/events
 [EventTarget]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget
 [fbemitter]: https://www.npmjs.com/package/fbemitter
-[github-action-url]: https://github.com/unional/events-plus/actions
-[github-nodejs]: https://github.com/unional/events-plus/workflows/nodejs/badge.svg
+[github-action-url]: https://github.com/cyberuni/events-plus/actions
+[github-nodejs]: https://github.com/cyberuni/events-plus/actions/workflows/release.yml/badge.svg
 [just-func]: https://github.com/justland/just-func-typescript
 [npm-image]: https://img.shields.io/npm/v/@unional/events-plus.svg?style=flat
 [npm-url]: https://npmjs.org/package/@unional/events-plus
-[semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
-[semantic-release-url]: https://github.com/semantic-release/semantic-release
 [vscode-image]: https://img.shields.io/badge/vscode-ready-green.svg
 [vscode-url]: https://code.visualstudio.com/

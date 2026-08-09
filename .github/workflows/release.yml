@@ -5,14 +5,23 @@ on:
 
 jobs:
   code:
-    uses: unional/.github/.github/workflows/yarn-verify-linux.yml@main
+    uses: cyberuni/.github/.github/workflows/pnpm-verify.yml@main
+    with:
+      os: '["ubuntu-latest"]'
+      skip-playwright: true
 
   release:
-    uses: unional/.github/.github/workflows/yarn-release-semantic.yml@main
+    uses: cyberuni/.github/.github/workflows/pnpm-release-changeset-oidc.yml@main
     needs: code
-    secrets: inherit
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
 
   docgen:
     if: github.ref == 'refs/heads/main'
-    uses: unional/.github/.github/workflows/yarn-docs.yml@main
+    uses: cyberuni/.github/.github/workflows/pnpm-docs.yml@main
     needs: release
+    # It pushes the built docs to gh-pages with GITHUB_TOKEN.
+    permissions:
+      contents: write
