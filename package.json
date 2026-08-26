@@ -66,7 +66,7 @@
     "@changesets/cli": "^3.0.0",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@repobuddy/jest": "^2.2.1",
+    "@repobuddy/jest": "^5.0.0",
     "@size-limit/preset-small-lib": "^8.1.0",
     "@types/fbemitter": "^2.0.32",
     "@types/jest": "^28.1.8",
