@@ -1,5 +1,14 @@
 # @unional/events-plus
 
+## 3.0.2
+
+### Patch Changes
+
+- f41a702: Rebuild with tsdown instead of the three `tsc -p` passes. The public API, the
+  entry points and the published file list are unchanged; the emitted JavaScript
+  differs because it now comes from a different compiler, and the re-export-only
+  `index` no longer ships a sourcemap that mapped nothing.
+
 ## 3.0.1
 
 ### Patch Changes
