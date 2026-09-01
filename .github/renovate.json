@@ -1,5 +1,29 @@
 {
-  "extends": [
-    "github>unional/renovate-preset"
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["github>unional/renovate-preset"],
+	"minimumReleaseAge": "3 days",
+	"platformAutomerge": true,
+	"rebaseWhen": "behind-base-branch",
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true
+		},
+		{
+			"matchDepTypes": ["devDependencies"],
+			"automerge": true
+		},
+		{
+			"matchUpdateTypes": ["major"],
+			"automerge": false
+		}
+	],
+	"vulnerabilityAlerts": {
+		"minimumReleaseAge": "1 day",
+		"automerge": true
+	},
+	"lockFileMaintenance": {
+		"enabled": true,
+		"automerge": true
+	}
 }
