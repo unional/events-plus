@@ -1,6 +1,6 @@
 {
 	"name": "@unional/events-plus",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "Provides additional features to event emitters",
 	"homepage": "https://github.com/cyberuni/events-plus",
 	"bugs": {
