@@ -1,14 +1,33 @@
 {
-  "extends": "./tsconfig.esm.json",
-  "compilerOptions": {
-    "noEmit": true
-  },
-  "typedocOptions": {
-    "name": "Provides additional features to event emitters",
-    "titleLink": "https://github.com/cyberuni/events-plus",
-    "entryPoints": [
-      "ts/index.ts"
-    ],
-    "out": "docs"
-  }
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		// An explicit `lib` replaces the default set, so it has to carry its own ES
+		// library alongside DOM or nothing global resolves.
+		"lib": ["DOM", "ES2019"],
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"newLine": "LF",
+		"noEmit": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"stripInternal": true,
+		"target": "ES2019",
+		"useDefineForClassFields": true,
+		// Named explicitly rather than relying on the ambient sweep: `vitest/globals`
+		// supplies `test`, `it`, `describe` and `expect`, matching `globals: true`.
+		"types": ["node", "vitest/globals"]
+	},
+	"include": ["ts", "tsdown.config.ts", "vitest.config.ts"],
+	"typedocOptions": {
+		"name": "Provides additional features to event emitters",
+		"titleLink": "https://github.com/cyberuni/events-plus",
+		"entryPoints": ["ts/index.ts"],
+		"out": "docs"
+	}
 }

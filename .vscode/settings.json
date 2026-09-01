@@ -1,30 +1,18 @@
 {
-  "cSpell.words": [
-    "FBEE",
-    "fbemitter",
-    "pnpm",
-    "Snyk"
-  ],
-  "eslint.enable": true,
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/.hg/store/**": true,
-    "**/.progress/**": true,
-    "**/node_modules/*/**": true,
-    ".github": true,
-    "cjs": true,
-    "coverage": true,
-    "esm": true,
-    "scripts": true
-  },
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "tsconfig.*.json"
-      ],
-      "url": "http://json.schemastore.org/tsconfig"
-    }
-  ],
-  "typescript.tsdk": "node_modules/typescript/lib"
+	"cSpell.words": ["FBEE", "fbemitter", "pnpm", "Snyk"],
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/.hg/store/**": true,
+		"**/.progress/**": true,
+		"**/node_modules/*/**": true,
+		".github": true,
+		"cjs": true,
+		"coverage": true,
+		"esm": true,
+		"scripts": true
+	},
+	"typescript.tsdk": "node_modules/typescript/lib"
 }

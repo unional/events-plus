@@ -1,11 +1,11 @@
 import { justEvent } from './index.js'
 
 test('usage', () => {
-  const emitter = new EventTarget()
+	const emitter = new EventTarget()
 
-  const count = justEvent<number>('count')
+	const count = justEvent<number>('count')
 
-  const e = new Event(count.type)
-  emitter.addEventListener(count.type, event => expect(event).toBe(e))
-  emitter.dispatchEvent(e)
+	const e = new Event(count.type)
+	emitter.addEventListener(count.type, (event) => expect(event).toBe(e))
+	emitter.dispatchEvent(e)
 })
