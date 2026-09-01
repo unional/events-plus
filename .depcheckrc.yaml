@@ -1,0 +1,18 @@
+parsers:
+  "**/*.cjs": "es6"
+  "**/*.mjs": "es6"
+  "**/*.ts": "typescript"
+ignores:
+  # Resolved by name from config rather than imported, so depcheck cannot see them.
+  - "@commitlint/config-conventional"
+  - "@types/node"
+  - "@vitest/coverage-v8"
+  # Supplies the ambient types for `fbemitter`, which ships none of its own.
+  - "@types/fbemitter"
+  # Used only as a bin in package.json scripts, or by a config file the parser
+  # does not follow.
+  - "@changesets/cli"
+  - "@commitlint/cli"
+  - "@repobuddy/biome"
+  - rimraf
+  - typedoc

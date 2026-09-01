@@ -1,5 +1,5 @@
 import a from 'assert'
-import { createStandardLogForTest, StandardLogForTest } from 'standard-log'
+import { createStandardLogForTest, type StandardLogForTest } from 'standard-log/testing'
 import { EventEmitterLike, EventTargetLike, trapError } from './index.js'
 
 export function thrower() { throw new Error('something went wrong') }

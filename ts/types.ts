@@ -2,7 +2,7 @@ export interface EventEmitterLike {
   addListener(eventName: string | symbol, listener: (...args: any[]) => void): any,
   once(eventName: string | symbol, listener: (...args: any[]) => void): any,
   removeAllListeners(event?: string | symbol): any,
-  // eslint-disable-next-line @typescript-eslint/ban-types
+  // biome-ignore lint/complexity/noBannedTypes: the shape mirrors what node, eventemitter2/3 and fbemitter all declare
   listeners(eventName: string | symbol): Array<Function>,
   emit(eventName: string | symbol, ...args: any[]): boolean | void,
 }
