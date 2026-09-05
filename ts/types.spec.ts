@@ -1,6 +1,6 @@
 import { EventEmitter2 } from 'eventemitter2'
 import { EventEmitter as EE3 } from 'eventemitter3'
-import { EventEmitter as NodeEE } from 'events'
+import { EventEmitter as NodeEE } from 'node:events'
 import { EventEmitter as FBEE } from 'fbemitter'
 import type { EventEmitterLike } from './types.js'
 

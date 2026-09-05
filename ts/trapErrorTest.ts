@@ -1,4 +1,4 @@
-import a from 'assert'
+import a from 'node:assert'
 import { createStandardLogForTest, type StandardLogForTest } from 'standard-log/testing'
 import { type EventEmitterLike, type EventTargetLike, trapError } from './index.js'
 
